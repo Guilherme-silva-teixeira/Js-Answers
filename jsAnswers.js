@@ -1,7 +1,7 @@
 import Click from "./examples/click.js";
 import Scroll from "./examples/scroll.js";
 import FindAndClick from "./examples/findAndClick.js";
-import YoutubeSearch from "./examples/youtubeSearch.js";
+import YoutubeSearch from "./examples/youtubeSearch.js"; 
 
 // ------------ Anotações ------------
 // Acho que importar agora não serve para nada
