@@ -3,21 +3,36 @@ import Scroll from "./examples/scroll.js";
 import FindAndClick from "./examples/findAndClick.js";
 import YoutubeSearch from "./examples/youtubeSearch.js";
 
+// ------------ Anotações ------------
 // Acho que importar agora não serve para nada
-// Depois eu acho que tenho que encontrar uma utilidade para isso
+// Depois eu acho que tenho que encontrar uma utilidade para isso (importar de outro arquivo)
+// Pegar os exemplos de automação e colocar lá embaixo
+// Pegar extrutura de outras páginas (Gmail, Watssapp, instagram, chatgpt, docs, etc)
+/* Criar alguma maneira da IA entender cada elemento mais rapido sobre a pesquisa do usuário e
+aplicar alguma segurança para não dar erro na hora de clicar ou fazer scroll e bloquear conteúdos
+nocivos (NSFW, +18, etc)
+*/
+// fazer  a entrada (por microfone (os comandos devem ser inseridos por microfone)) e o leitor de tela, contraste, etc
 
-
-const examples = [];
+const examples = [];//também não sei se serve para alguma coisa ou deva servir depois
 
 const popularPages = [youtubePage];
 
-const duvidas = [cliqueNoBotaoEEnvieUmFormulario,digiteOlaEmUmCampoDeTextoEDepoisCliqueEmEnviar];
+const duvidas = [
+    cliqueNoBotaoEEnvieUmFormulario,
+    digiteOlaEmUmCampoDeTextoEDepoisCliqueEmEnviar,
+    roleParaOTopoDaPagina,
+    roleParBaixo500Pixels,
+    roleParaCima300Pixels,
+    roleParaBAixoAteOFinalDaPagina,
+    pesquisaYoutube
+];
 
 // Adiciona exemplos de automação
 
 // a IA deve retornar em JSON para rodar a automação
 
-//exemplos simples
+//Comandos simples
 
 const cliqueNoBotaoEEnvieUmFormulario = `
     Exemplo para "Clique no botão 'Enviar' em um formulário":
@@ -36,6 +51,41 @@ Exemplo para "Digite 'Olá' em um campo de texto e depois clique em 'Enviar'":
     { "action": "CLICK", "selector": "button[type='submit'][name='enviar']" }
   ]
 }`;
+
+const roleParaOTopoDaPagina = `
+Exemplo para "Role para o topo da página":
+{
+  "actions": [
+    { "action": "SCROLL", "direction": "top" }
+  ]
+}`;
+
+const roleParBaixo500Pixels = `
+Exemplo para "Role para baixo 500 pixels":
+{
+  "actions": [
+    { "action": "SCROLL", "direction": "down", "amount_pixels": 500 }
+  ]
+}`;
+
+const roleParaCima300Pixels = `
+Exemplo para "Role para cima 300 pixels":
+{
+  "actions": [
+    { "action": "SCROLL", "direction": "up", "amount_pixels": 300 }
+  ]
+}`;
+
+const roleParaBAixoAteOFinalDaPagina = `
+Exemplo para "Role para baixo até o final da página":
+{
+    "actions": [
+    { "action": "SCROLL", "direction": "bottom" }
+    ]
+}
+`;
+
+//============================================================= COMANDOS AVANÇADOS ============================================================
 
 const pesquisaYoutube = `
 //Comando do usuário: "Procure por 'Sentry DevRelate: Debugging with Replay' no YouTube e clique no primeiro vídeo do canal Sentry"
